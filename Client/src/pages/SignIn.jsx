@@ -12,7 +12,6 @@ const SignIn = () => {
   const navigate=useNavigate();
   const dispatch=useDispatch();
   const {loading,error:errorMessage}=useSelector(state=>state.user);
-  console.log(loading,errorMessage)
   const handleChange=(e)=>{
     setFormData({...formData,[e.target.id]:e.target.value.trim()})
   }
@@ -22,7 +21,6 @@ const SignIn = () => {
     if(!formData.email || !formData.password){
       //return setErrorMessage("pelease fiel all the fields.");
       return dispatch(signInFailure("please fill all the requred fields"));
-      console.log("no data");
     }
     try{
       // setLoading(true);
@@ -51,10 +49,10 @@ const SignIn = () => {
   }
   return (
     <div className='min-h-screen mt-20'>
-      <div className='flex p-3 max-w-3xl mx-auto flex-col md:flex-row md:items-center gap-10'>
+      <div className='flex p-2 max-w-3xl mx-auto flex-col md:flex-row md:items-center gap-8'>
         <div className="flex-1">
-          <Link to='/' className=" font-bold text-4xl dark:text-white"><span className="px-2 py-1 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-lg text-white">Haftamus's</span> Blog App</Link>
-          <p className="text-sm mt-5">this is my MERN stack blog application. if you like it thumps up. you can sign up with you email.</p>
+          <Link to='/' className=" font-bold text-4xl dark:text-white"><span className="px-2 py-1 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-lg text-white">Haftamu&apos;s</span> Blog App</Link>
+          <p className="text-sm mt-5 text-indigo-800">This is my <span className="text-lg text-green-400"> MERN stack Blog Application</span>. If you like it thumps up. You can sign up with your email.</p>
         </div>
         <div className="flex-1">
           <form className="flex flex-col gap-4" onSubmit={handleSubmit}>

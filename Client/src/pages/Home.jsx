@@ -24,7 +24,7 @@ const Home = () => {
       <p className="text-xl text-orange-500">Profetionaly am full stack developer and electrical Engineer.
         In this blog app you will get enormous articles and lessons in diffent fields. 
       </p>
-      <Link to='/search' className="text-teal-400 text-xl sm:text-sm mt-10">View all posts</Link>
+      <Link to='/search' className="text-teal-400 text-xl sm:text-sm ml-20 mb-8">View all posts</Link>
       <div className="p-3 bg-amber-100 dark:bg-slate-700">
       <CallToAction />
       </div>

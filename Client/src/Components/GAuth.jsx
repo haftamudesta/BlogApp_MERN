@@ -1,5 +1,4 @@
 import { Button } from 'flowbite-react'
-import React from 'react'
 import { AiFillGoogleCircle } from 'react-icons/ai';
 import {GoogleAuthProvider, signInWithPopup,getAuth} from "firebase/auth";
 import { useDispatch } from 'react-redux';
@@ -35,15 +34,15 @@ const GAuth = () => {
           dispatch(signInSuccess(data));
           navigate('/');
         }
-      }catch{
-
+      }catch(error){
+        console.log(error)
       }
     }
   return (
     <div>
         <Button type='button' gradientDuoTone='pinkToOrange' outline onClick={handleClick}>
-            <AiFillGoogleCircle className='w-6 h-6 mr-4'/>
-            Sign in with google
+            <AiFillGoogleCircle className='w-24 h-6 mr-4'/>
+            Sign in With Google
         </Button>
     </div>
   )

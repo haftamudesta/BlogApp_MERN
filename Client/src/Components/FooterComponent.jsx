@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const FooterComponent = () => {
   return (
-    <Footer container className="border border-t-6 border-teal-500">
+    <Footer container className="border border-t-8 border-r-8 border-teal-500 border-r-teal-300">
         <div>
             <div>
                 <div>

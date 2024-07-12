@@ -33,7 +33,8 @@ const NavBar = () => {
                     dispatch(signoutSuccess());
             }
     }catch(error){
-            createNextState(error.message)
+      console.log(error.message)
+      //createNextState(error.message)
     }
  }
 
@@ -46,7 +47,7 @@ const NavBar = () => {
  }
   return (
     <Navbar className="border-b-2" >
-      <Link to='/' className="self-center whitespace-nowrap text-sm sm:text-xl font-semibold"><span className="px-2 py-1 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-lg text-white">Haftamu</span> Blog App</Link>
+      <Link to='/' className="self-center whitespace-nowrap text-sm sm:text-xl font-semibold"><span className="px-2 py-1 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-lg text-white">Haftamu&apos;s</span> Blog App</Link>
       <form onSubmit={handleSubmit}>
         <TextInput 
         type="text"
@@ -93,7 +94,6 @@ const NavBar = () => {
           </Link>
         )
         }
-        
         <Navbar.Toggle/>
       </div>
       <Navbar.Collapse>

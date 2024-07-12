@@ -23,13 +23,13 @@ const DashUsers = () => {
                                         }
                                 }
                         }catch(error){
-                                
+                                console.log(error.message)  
                         }
                 }
                 if(currentUser.isAdmin){
                         fetchUsers();  
                 }
-        },[currentUser._id]) 
+        },[currentUser._id,currentUser.isAdmin]) 
         
         const handleShowMore =async()=>{
             const startIndex=users.length;
@@ -43,7 +43,7 @@ const DashUsers = () => {
                         }
                 }
             }catch(error){
-
+                console.log(error.message)
             }   
         }
 

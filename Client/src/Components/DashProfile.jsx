@@ -146,8 +146,8 @@ const DashProfile = () => {
         }
      }
   return (
-    <div className=" relative max-w-lg mx-auto p-3 w-full ">
-        <h1 className="my-7  text-center font-semibold text-3xl">Profile</h1>
+    <div className="max-w-6xl mx-auto p-3 w-full ml-8 mr-8">
+        <h1 className="my-7 text-center font-semibold text-4xl">Profile</h1>
         <form onSubmit={handleSubmitForm} className="flex flex-col gap-4">
                 <input type="file" accept="image/*" onChange={handleImageChange} ref={filePickerRef} hidden/>
                 <div className="w-32 h-32 self-center cursor-pointer overflow-hidden shadow-md rounded-full" onClick={()=>filePickerRef.current.click()}>

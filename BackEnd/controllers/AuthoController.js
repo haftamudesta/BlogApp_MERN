@@ -37,7 +37,7 @@ const signIn=async (req,res,next)=>{
         }
         const validPassword=bcryptjs.compareSync(password,validUser.password);
         if(!validPassword){
-            next(errorHandler(400,"wrong credentials: invalid user or password"));
+           return next(errorHandler(400,"wrong credentials: invalid user or password"));
         }
         const token=jwt.sign({id:validUser._id,isAdmin:validUser.isAdmin},process.env.JWT_SECRET);
         const {password:pass,...rest}=validUser._doc;

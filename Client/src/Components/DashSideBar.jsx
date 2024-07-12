@@ -1,6 +1,6 @@
 import { useEffect,useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Sidebar, SidebarItemGroup } from 'flowbite-react'
+import { Sidebar} from 'flowbite-react'
 import { HiArrowSmRight, HiDocumentText, HiOutlineUserGroup, HiUser } from 'react-icons/hi';
 import { useDispatch ,useSelector} from "react-redux";
 import { signoutSuccess } from "../redux/user/UserSlice";
@@ -30,7 +30,8 @@ const DashSideBar = () => {
                         dispatch(signoutSuccess());
                 }
         }catch(error){
-                createNextState(error.message)
+                console.log(error.message)
+                // createNextState(error.message)
         }
      }
   return (
