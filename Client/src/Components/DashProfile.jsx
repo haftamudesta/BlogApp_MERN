@@ -43,11 +43,12 @@ const DashProfile = () => {
                 uploadImage();
                 }
         },[imageFile]);
+
         const uploadImage=async ()=>{
                 setImageUploading(true);
                 setimageUploadError(null);
             const storage=getStorage(app); 
-            const fileName=new Date().getTime+imageFile;
+            const fileName=new Date().getTime + imageFile;
             const storageRef=ref(storage,fileName);
             const uploadTask=uploadBytesResumable(storageRef,imageFile);
             uploadTask.on(
@@ -56,7 +57,7 @@ const DashProfile = () => {
                         const progress=(snapshat.bytesTransferred/snapshat.totalBytes)*100;
                         setimageUploadProgress(progress.toFixed(0));
                 },
-                (error)=>{
+                ()=>{
                         setimageUploadError("image uploading error:image must be <2Mb");
                         setimageUploadProgress(null);
                         setImageFile(null);
@@ -142,12 +143,13 @@ const DashProfile = () => {
                         dispatch(signoutSuccess());
                 }
         }catch(error){
-                createNextState(error.message)
+                console.log(error)
+                //createNextState(error.message)
         }
      }
   return (
-    <div className="max-w-6xl mx-auto p-3 w-full ml-8 mr-8">
-        <h1 className="my-7 text-center font-semibold text-4xl">Profile</h1>
+    <div className="relative max-w-lg mx-auto p-3 w-full ml-40 mr-8">
+        <h1 className="my-2 text-center font-semibold text-4xl">Profile</h1>
         <form onSubmit={handleSubmitForm} className="flex flex-col gap-4">
                 <input type="file" accept="image/*" onChange={handleImageChange} ref={filePickerRef} hidden/>
                 <div className="w-32 h-32 self-center cursor-pointer overflow-hidden shadow-md rounded-full" onClick={()=>filePickerRef.current.click()}>
@@ -156,10 +158,10 @@ const DashProfile = () => {
                                 strokeWidth={5}
                                 styles={{
                                         root:{
-                                                widtth:'30%',
-                                                height:'30%',
+                                                widtth:'20%',
+                                                height:'20%',
                                                 position:'absolute',
-                                                top:90,
+                                                top:75,
                                                 left:0,
                                         },
                                         path:{
@@ -187,8 +189,12 @@ const DashProfile = () => {
                 type="password" 
                 id="password" 
                 placeholder="password" onChange={handleChange}/>
-                <Button type="submit" gradientDuoTone='purpleToBlue' className="" >
-                        Update
+                <Button 
+                type="submit" 
+                gradientDuoTone='purpleToBlue' 
+                outline
+                className="" disabled={loading || imageUploading} >
+                        {loading?'loading...':'Update'}
                 </Button>
                 {
                        currentUser&& currentUser.isAdmin &&(
@@ -196,7 +202,7 @@ const DashProfile = () => {
                                      <Button 
                                       type="button"
                                       gradientDuoTone='purpleToBlue'
-                                      className="w-40"
+                                      className="w-full"
                                       >
                                              Create post
                                       </Button>

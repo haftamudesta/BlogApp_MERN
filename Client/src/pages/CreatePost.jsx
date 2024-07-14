@@ -34,7 +34,7 @@ const CreatePost = () => {
               const progress=(snapshat.bytesTransferred/snapshat.totalBytes)*100;
               setimageUploadProgress(progress.toFixed(0));
       },
-      (error)=>{
+      ()=>{
               setimageUploadError("image uploading error");
               setimageUploadProgress(null);
               //setImageFile(null);
@@ -100,9 +100,10 @@ const CreatePost = () => {
                         onChange={(e)=>setFormDta({...formData,title:e.target.value})}    
                 />
                 <Select className="gap-3"
-                onChange={(e)=>setFormDta({...formData,catagory:e.target.value})}
+                onChange={(e)=>setFormDta({...formData,category:e.target.value})}
                 >
                 <option value='uncatagorized'>select a catagory</option>
+                <option value='ruby'>Node.js</option>
                 <option value='ruby'>Ruby</option>
                 <option value='javascript'>Javascript</option>
                 </Select>

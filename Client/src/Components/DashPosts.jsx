@@ -22,7 +22,7 @@ const DashPosts = () => {
                                         }
                                 }
                         }catch(error){
-                                
+                                console.log(error.message)      
                         }
                 }
                 if(currentUser.isAdmin){
@@ -42,7 +42,7 @@ const DashPosts = () => {
                         }
                 }
             }catch(error){
-
+                console.log(error.message)
             }   
         }
         const handleDeletePost =async  ()=>{
@@ -65,7 +65,7 @@ const DashPosts = () => {
         }
   return (
         //scrollbar scrollbar-track-slate-700 scrollbar-thumb-slate-400
-    <div className="table-auto p-3 ">
+    <div className="p-3 ">
         {currentUser.isAdmin && userPosts.length> 0 ?(
                 <div>
                 <Table hoverable className="shadow-md">
@@ -74,14 +74,17 @@ const DashPosts = () => {
                                 <Table.HeadCell>Post Image</Table.HeadCell>
                                 <Table.HeadCell>Post Title</Table.HeadCell>
                                 <Table.HeadCell>Category</Table.HeadCell>
-                                <Table.HeadCell>
+                                <Table.HeadCell
+                                >
                                    Delete     
                                 </Table.HeadCell>
                                 <Table.HeadCell><span>Edit</span></Table.HeadCell>
                                 </Table.Head>
                                 {userPosts.map((post)=>(
                                         
-                                        <Link to={`/post/${post.slug}`}>
+                                        <Link 
+                                        to={`/post/${post.slug}`}
+                                        key={post._id}>
                                         <Table.Body className="divide-y">
                                                 <Table.Row>
                                                 <Table.Cell>
