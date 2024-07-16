@@ -40,7 +40,7 @@ const SearchPage = () => {
                                 const data=await res.json();
                                 setPosts(data.posts);
                                 setLoading(false);
-                                if(posts.length===9){
+                                if(data.posts.length===9){
                                         setShowMore(true);
                                 }else{
                                         setShowMore(false);
@@ -104,7 +104,7 @@ const SearchPage = () => {
                                 placeholder='Search ...'
                                 id='searchTerm'
                                 type='text'
-                                defaultValue={sidebarData.searchTerm}
+                                value={sidebarData.searchTerm}
                                 onChange={handleChange}
                                 />
                         </div>
@@ -139,7 +139,7 @@ const SearchPage = () => {
         <div className='w-full'>
                 <h1 className='text-4xl border-b-2 border-x-green-900 p-3 mt-4'>Post Results</h1>
                 <div className='flex flex-wrap p-5 gap-3'>
-                        {!loading && posts.length===0&&(
+                        {!loading && posts.length ===0 &&(
                                 <p>No post result was found</p>
                         )}
                         {loading&&(

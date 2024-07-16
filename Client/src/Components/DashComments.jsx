@@ -1,9 +1,9 @@
 import { Table,Button,Modal } from "flowbite-react";
 import { useEffect,useState} from "react";
 import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+//import { Link } from "react-router-dom";
 import { HiOutlineExclamationCircle } from "react-icons/hi";
-import {FaCheck,FaTimes} from "react-icons/fa"
+//import {FaCheck,FaTimes} from "react-icons/fa"
 const DashComments = () => {
         const {currentUser}=useSelector(state=>state.user);
         const [comments,setComments]=useState([]);
@@ -24,7 +24,7 @@ const DashComments = () => {
                                         }
                                 }
                         }catch(error){
-                                
+                                console.log(error.message)
                         }
                 }
                 if(currentUser.isAdmin){
@@ -44,7 +44,7 @@ const DashComments = () => {
                         }
                 }
             }catch(error){
-
+                console.log(error.message)
             }   
         }
 
@@ -59,7 +59,7 @@ const DashComments = () => {
                                 console.log(data)
                         }else{
                                 setComments((prev)=>{
-                                prev.filter((user)=>user._id!==userIdToDelete)
+                                prev.filter((user)=>user._id!==commentIdToDelete)
                                 })
                         }
                 }catch(error){

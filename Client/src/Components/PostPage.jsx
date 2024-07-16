@@ -78,7 +78,7 @@ const PostPage = () => {
                                 <div className="p-3 max-w-2xl mx-auto w-full post-content" dangerouslySetInnerHTML={{__html:post && post.content}}>
                                 </div>
                                 <div>
-                                        <CallToAction />
+                                  <CallToAction />
                                 </div>
                                 <CommentSection postId={post._id}/>
                                 <div className="flex flex-col justify-center items-center mb-5">
@@ -87,7 +87,7 @@ const PostPage = () => {
                                         </h1>
                                         <div className="flex flex-wrap gap-5 justify-center mt-2">
                                         {recentPosts && recentPosts.map((post)=>(
-                                                <PostCard key={post._id} post={post}/>
+                                           <PostCard key={post._id} post={post}/>
                                         ))
                                         }
                                         </div>

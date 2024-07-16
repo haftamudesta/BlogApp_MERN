@@ -60,7 +60,7 @@ const UpdatePost = () => {
               const progress=(snapshat.bytesTransferred/snapshat.totalBytes)*100;
               setimageUploadProgress(progress.toFixed(0));
       },
-      (error)=>{
+      ()=>{
               setimageUploadError("image uploading error");
               setimageUploadProgress(null);
               //setImageFile(null);

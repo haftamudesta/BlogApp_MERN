@@ -21,6 +21,7 @@ const NavBar = () => {
       setSearchTerm(searchTermFromUrl);
     }
   },[location.search]);
+  console.log(searchTerm)
   const handleSignOut =async()=>{
     try{
             const res=await fetch('/api/user/signout',{
@@ -43,7 +44,7 @@ const NavBar = () => {
   const urlParams=new URLSearchParams(location.search);
   urlParams.set('searchTerm',searchTerm);
   const searchQuery=urlParams.toString();
-  navigate(`/search/${searchQuery}`)
+  navigate(`/search?${searchQuery}`)
  }
   return (
     <Navbar className="border-b-2" >

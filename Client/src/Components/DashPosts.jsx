@@ -122,34 +122,34 @@ const DashPosts = () => {
                                 
                         </Table>
                         {showMore && (
-                                <button onClick={handleShowMore} className="w-full text-teal-600 self-center mt-2">
-                                        Show More
-                                </button>
+                          <button onClick={handleShowMore} className="w-full text-teal-600 self-center mt-2">
+                            Show More
+                          </button>
                         )}
                 </div>
         ):
         (
-                <h1>You do not have any post yet</h1>
+           <h1>You do not have any post yet</h1>
         )}
-         <Modal
+        <Modal
         show={showModal}
         onClose={()=>setShowModal(false)}
         popup
         size='md'
          >
-                <Modal.Header />
-                <Modal.Body>
-                        <div className="text-center">
-                                <HiOutlineExclamationCircle className="h-14 w-14 text-grat-400 dark:text-gray-200 mx-auto mb-4" />
-                        </div>
-                        <p className="mb-5 text-gray-500 dark:text-gray-400 text-lg">Are you sure you want to delete this post!</p>
-                        <div className="flex justify-between">
-                                <Button color="failure" onClick={handleDeletePost}>
-                                        Yes
-                                </Button>
-                                <Button onClick={()=>setShowModal(false)}>Cancel</Button>
-                        </div>
-                </Modal.Body>
+        <Modal.Header />
+           <Modal.Body>
+              <div className="text-center">
+                <HiOutlineExclamationCircle className="h-14 w-14 text-grat-400 dark:text-gray-200 mx-auto mb-4" />
+              </div>
+                <p className="mb-5 text-gray-500 dark:text-gray-400 text-lg">Are you sure you want to delete this post!</p>
+                <div className="flex justify-between">
+                  <Button color="failure" onClick={handleDeletePost}>
+                     Yes
+                   </Button>
+                   <Button onClick={()=>setShowModal(false)}>Cancel</Button>
+               </div>
+           </Modal.Body>
         </Modal>
     </div>
   )

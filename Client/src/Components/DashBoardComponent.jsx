@@ -67,9 +67,9 @@ const DashBoardComponent = () => {
   return (
     <div>
         <div>
-                <div className="flex flex-wrap">
-                        <div className="flex gap-24 ">
-                                <div className="flex gap-4 items-center">
+                <div className="flex flex-wrap mt-4 gap-4 ">
+                        <div className="flex gap-4 border border-slate-400 p-2">
+                                <div className="flex gap-4 items-center ">
                                 <div>
                                 <p className="text-gray-600 text-md uppercase">Total Users</p>
                                 <p className="text-2xl">{tottalUsers}</p>
@@ -85,7 +85,7 @@ const DashBoardComponent = () => {
                         </div>
 
 
-                        <div className="flex gap-24 ">
+                        <div className="flex gap-24 border border-slate-400 p-2">
                                 <div className="flex gap-4 items-center">
                                 <div>
                                 <p className="text-gray-600 text-md uppercase">Total Posts</p>
@@ -102,7 +102,7 @@ const DashBoardComponent = () => {
                         </div>
 
 
-                        <div className="flex gap-24 ">
+                        <div className="flex gap-24 border border-slate-400 p-2">
                                 <div className="flex gap-4 items-center">
                                 <div>
                                 <p className="text-gray-600 text-md uppercase">Total Comments</p>

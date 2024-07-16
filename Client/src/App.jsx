@@ -17,11 +17,8 @@ import ScrollToTop from "./Components/ScrollToTop";
 import SearchPage from "./pages/SearchPage";
 
 function App() {
-  
-
   return (
     <>
-
       <BrowserRouter>
       <ScrollToTop />
       <NavBar />
@@ -40,12 +37,10 @@ function App() {
         </Route>
         <Route path='/projects' element={<Projects />} />
         <Route path='/post/:postSlug' element={<PostPage />} />
-
       </Routes>
       <FooterComponent />
       </BrowserRouter>
     </>
   )
 }
-
 export default App
