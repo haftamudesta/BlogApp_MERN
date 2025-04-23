@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+        height: 100vh;
+}
+
+.ql-editor{
+        font-size: 1.05rem;
+}
+
+.post-content p {
+   margin-bottom: 24px;
+   color: aquamarine;     
+}
+
+.post-content h1 {
+        background: blueviolet;
+}
+
+.post-content a {
+        color: blueviolet;
+}
+
+.dark .post-content p {
+        color: brown;
+}
